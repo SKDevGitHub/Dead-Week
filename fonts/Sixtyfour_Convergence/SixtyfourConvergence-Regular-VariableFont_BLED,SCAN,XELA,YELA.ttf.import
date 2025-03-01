@@ -3,12 +3,11 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b1m8tbtykawe8"
-path="res://.godot/imported/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf-c6ca8da1b787c6fbdb1bc3c92e6c2d86.fontdata"
+valid=false
 
 [deps]
 
 source_file="res://fonts/Sixtyfour_Convergence/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf"
-dest_files=["res://.godot/imported/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf-c6ca8da1b787c6fbdb1bc3c92e6c2d86.fontdata"]
 
 [params]
 
