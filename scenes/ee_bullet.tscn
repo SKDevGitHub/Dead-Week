@@ -28,13 +28,13 @@ animations = [{
 
 [node name="EeBullet" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="bullet" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
 position = Vector2(212, 72)
 shape = SubResource("RectangleShape2D_57yit")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bullet"]
 position = Vector2(212, 71)
 sprite_frames = SubResource("SpriteFrames_80vq7")
 autoplay = "default"
