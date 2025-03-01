@@ -11,6 +11,8 @@ func _ready() -> void:
 
 var i: int = 0
 
+@export var bullet_scene: PackedScene = preload("res://scenes/ee_bullet.tscn")
+
 func change_anim(anim: String) -> void:
 	if sprite.animation != anim:
 		var frame = sprite.frame
@@ -83,4 +85,7 @@ func _physics_process(delta: float) -> void:
 
 func shoot() -> void:
 	pass
+	
+	
+	
 	
