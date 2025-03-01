@@ -3,12 +3,11 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cxswnjgn70m4f"
-path="res://.godot/imported/SixtyfourConvergence-Regular.ttf-76fae89501f290a2830abc89d5776807.fontdata"
+valid=false
 
 [deps]
 
 source_file="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf"
-dest_files=["res://.godot/imported/SixtyfourConvergence-Regular.ttf-76fae89501f290a2830abc89d5776807.fontdata"]
 
 [params]
 
