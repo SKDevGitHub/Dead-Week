@@ -26,7 +26,7 @@ func change_anim(anim: String) -> void:
 		sprite.frame_progress = frame_progress
 		i+=1
 
-<<<<<<< HEAD
+
 func shoot() -> void:
 	if shoot_timer.is_stopped():
 		var bullet = bullet_path.instantiate()
@@ -40,13 +40,7 @@ func shoot() -> void:
 		
 		
 		
-=======
-#func shoot() -> void:
-	#var bullet = bullet_path.instantiate()
-	#bullet.dir = 1
-	#bullet.pos = $spawner.global_position
-	#get_parent().add_child(bullet)
->>>>>>> e5d6d1584605b0e4aab9d7e8e9b65d24c199e94c
+
 	
 
 
@@ -55,13 +49,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-<<<<<<< HEAD
+
 	if Input.is_action_just_pressed("shoot_button"):
 		shoot()
-=======
-	#if Input.is_action_just_pressed("jump_button"):
-		#shoot()
->>>>>>> e5d6d1584605b0e4aab9d7e8e9b65d24c199e94c
+
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump_button") and is_on_floor():

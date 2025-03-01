@@ -6,7 +6,7 @@ func _ready():
 	pass
 	
 func _process(delta: float) -> void:
-	position += direction* delta * 750
+	position += direction* delta * 500
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free() 
