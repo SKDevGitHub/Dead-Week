@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bjmpwb8xth0iu" path="res://scenes/speech_bubble.tscn" id="2_0t27n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkspu"]
-size = Vector2(20, 23.5)
+size = Vector2(20, 173.75)
 
 [node name="opening_speeech" type="Area2D"]
 position = Vector2(12, -13)
@@ -12,7 +12,7 @@ collision_layer = 2
 script = ExtResource("1_la2e7")
 
 [node name="area_collision" type="CollisionShape2D" parent="."]
-position = Vector2(21, 33)
+position = Vector2(21, -42.125)
 shape = SubResource("RectangleShape2D_xkspu")
 
 [node name="SpeechBubble" parent="." instance=ExtResource("2_0t27n")]
@@ -26,5 +26,6 @@ offset_right = 25.0
 offset_bottom = -7.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(1, 1.36)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
