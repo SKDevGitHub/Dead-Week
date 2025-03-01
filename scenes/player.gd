@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var shooting = false
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 @onready var sprite := $AnimatedSprite2D
