@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bs0xntg041bj0"]
+[gd_scene load_steps=19 format=4 uid="uid://bs0xntg041bj0"]
 
 [ext_resource type="Texture2D" uid="uid://jk3dn2dcwc13" path="res://assets/Tiles.png" id="1_v0eoe"]
 [ext_resource type="Texture2D" uid="uid://xdt3ot5pnsxe" path="res://assets/Assets_City.png" id="2_r5orm"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dastlje74wsd6" path="res://scenes/Player.tscn" id="4_cyu15"]
 [ext_resource type="Script" path="res://scripts/trapdoors.gd" id="5_3lwry"]
 [ext_resource type="Texture2D" uid="uid://cd5xg3ta37385" path="res://Tiles.png" id="5_on8or"]
+[ext_resource type="Script" path="res://scripts/door_transition.gd" id="7_f2ta0"]
+[ext_resource type="FontFile" uid="uid://cxswnjgn70m4f" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="8_74820"]
+[ext_resource type="Script" path="res://scripts/screen_transition.gd" id="9_iethw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4ieg"]
 texture = ExtResource("1_v0eoe")
@@ -737,6 +740,13 @@ size = Vector2(32, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqqrh"]
 size = Vector2(34, 176)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gi3d"]
+size = Vector2(20, 41)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hofa2"]
+font = ExtResource("8_74820")
+font_size = 8
+
 [node name="ExamLevel_tscn" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -929,5 +939,44 @@ collision_layer = 0
 position = Vector2(128, 8)
 shape = SubResource("RectangleShape2D_mqqrh")
 
+[node name="DoorTransition" type="Node2D" parent="."]
+position = Vector2(149, 137)
+script = ExtResource("7_f2ta0")
+
+[node name="Trigga" type="Area2D" parent="DoorTransition"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorTransition/Trigga"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_5gi3d")
+
+[node name="Label" type="Label" parent="DoorTransition"]
+offset_left = -53.0
+offset_top = -37.0
+offset_right = 64.0
+offset_bottom = -5.0
+text = "Press <S> to enter.."
+label_settings = SubResource("LabelSettings_hofa2")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="DoorTransition"]
+script = ExtResource("9_iethw")
+
+[node name="ColorRect" type="ColorRect" parent="DoorTransition/CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 107.0
+offset_top = 102.0
+offset_right = 107.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="timeout" from="TrapdoorMachine/Timer" to="TrapdoorMachine" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapdoorMachine/Trigga" to="TrapdoorMachine" method="_on_trigga_body_entered"]
+[connection signal="body_entered" from="DoorTransition/Trigga" to="DoorTransition" method="_on_trigga_body_entered"]
+[connection signal="body_exited" from="DoorTransition/Trigga" to="DoorTransition" method="_on_trigga_body_exited"]
