@@ -1,6 +1,10 @@
+Button
+VBoxContainer
+MarginContainer
+RichTextLabel
+Control
 CollisionShape2D
 Area2D
 Label
 Panel
-Control
 TileMap

@@ -1,6 +1,4 @@
-res://scenes/levels/dorm.tscn
-res://scenes/levels/control.gd
-res://speech_bubble.gd
-res://scenes/speech_bubble.tscn
 res://scenes/main.tscn
-res://scenes/levels/area_2d.gd
+res://scenes/speech_bubble.tscn
+res://scenes/main_menu.gd
+res://scripts/main_menu.gd
