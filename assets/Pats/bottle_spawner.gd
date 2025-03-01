@@ -7,6 +7,7 @@ extends Node2D
 #@onready var player = 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	timer.timeout.connect(throw)
 	timer.start()
 	sprite.play("default")
@@ -17,7 +18,11 @@ func _process(delta: float) -> void:
 		timer.start()
 		throw()
 func throw() -> void:
-	var projectile = bottle.instantiate() as RigidBody2D
+	var bottle = load("res://assets/Pats/bottle.tscn")  # Load just before instantiating
+	if not bottle:
+		print("Error: Failed to load bottle scene!")
+		return
+	var projectile = bottle.instantiate() 
 	add_child(projectile)
 	
 	projectile.global_position = raycast.global_position

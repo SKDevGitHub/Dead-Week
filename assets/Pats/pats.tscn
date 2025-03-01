@@ -24,5 +24,5 @@ script = ExtResource("2_etwb1")
 [node name="RayCast2D" type="RayCast2D" parent="pats/bottle spawner"]
 target_position = Vector2(-21, -29)
 
-[node name="Timer" type="Timer" parent="pats"]
+[node name="Timer" type="Timer" parent="pats/bottle spawner"]
 autostart = true
