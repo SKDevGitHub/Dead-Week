@@ -1,13 +1,12 @@
-extends CharacterBody2D
+extends Area2D
 
-
-var pos:Vector2
-var speed = 1000
-var dir : float
+@export var direction:Vector2 = Vector2.ZERO
 
 func _ready():
-	global_position=pos
-func _physics_process(delta):
+	pass
+	
+func _process(delta: float) -> void:
+	position += direction* delta * 750
 
-	velocity = Vector2(speed,0).rotated(dir)
-	move_and_slide()
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free() 

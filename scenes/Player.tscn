@@ -148,5 +148,8 @@ zoom = Vector2(5, 5)
 wait_time = 0.1
 one_shot = true
 
-[node name="spawner" type="Node2D" parent="player"]
+[node name="spawnerparent" type="Node2D" parent="player"]
+scale = Vector2(1e-05, 1e-05)
+
+[node name="spawner" type="Node2D" parent="player/spawnerparent"]
 position = Vector2(10, 0)

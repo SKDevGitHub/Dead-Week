@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgj2al0rb0kmh"]
+[gd_scene load_steps=6 format=3 uid="uid://cgj2al0rb0kmh"]
 
+[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_d3eax"]
 [ext_resource type="Texture2D" uid="uid://dsvvykuqtfuec" path="res://assets/LightningBolt/LightningBolt1.png" id="1_pmrwg"]
 [ext_resource type="Texture2D" uid="uid://c5u2lu87kq3ly" path="res://assets/LightningBolt/LightningBolt2.png" id="2_hbj84"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57yit"]
-size = Vector2(19, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoqfi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_80vq7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_snqcx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -14,9 +14,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_hbj84")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_pmrwg")
 }, {
 "duration": 1.0,
 "texture": ExtResource("1_pmrwg")
@@ -28,13 +25,11 @@ animations = [{
 
 [node name="EeBullet" type="Node2D"]
 
-[node name="bullet" type="CharacterBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_d3eax")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
-position = Vector2(212, 72)
-shape = SubResource("RectangleShape2D_57yit")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_uoqfi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bullet"]
-position = Vector2(212, 71)
-sprite_frames = SubResource("SpriteFrames_80vq7")
-autoplay = "default"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_snqcx")
