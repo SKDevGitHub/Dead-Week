@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+var health 
 var shooting = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
 
+var max_health: int = 5
 
 @onready var sprite := $AnimatedSprite2D
 @onready var shoot_timer := $Timer
@@ -12,6 +14,7 @@ const JUMP_VELOCITY = -320.0
 
 func _ready() -> void:
 	change_anim("default")
+	health = max_health
 
 var i: int = 0
 
@@ -112,9 +115,15 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("left_button") and !Input.is_action_pressed("right_button"):
 				sprite.flip_h = true
 				spawnerparent.scale.x = -1
-
 	move_and_slide()
 
 	
+func take_damage(damage):
+	health - damage
+	if health <= 0:
+		game_over()
+		
+func game_over():
+	Engine.time_scale = 0
 	
 	

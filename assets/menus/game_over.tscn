@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://c43h5i6cetts"]
+
+[ext_resource type="FontFile" uid="uid://bhiwn16rpwe7g" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="1_k0ki7"]
+
+[node name="gameOver" type="Control"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 45.0
+offset_top = -84.0
+offset_right = 85.0
+offset_bottom = -44.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -81.0
+offset_right = 119.0
+offset_bottom = 49.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 112.0
+offset_bottom = 38.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PlayAgain" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k0ki7")
+theme_override_font_sizes/font_size = 10
+text = "Play Again?"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k0ki7")
+theme_override_font_sizes/font_size = 10
+text = "Quit?"
+
+[node name="Game_over" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -68.0
+offset_top = -51.0
+offset_right = 123.0
+offset_bottom = -11.0
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_k0ki7")
+text = "GAME OVER"

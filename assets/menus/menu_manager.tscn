@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwv7kox7cam60"]
+
+[ext_resource type="Script" path="res://scenes/levels/menu_manager.gd" id="1_lv16a"]
+[ext_resource type="FontFile" uid="uid://bhiwn16rpwe7g" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="2_07uyl"]
+
+[node name="menuManager" type="Node2D"]
+script = ExtResource("1_lv16a")
+
+[node name="paused" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 46.0
+offset_top = -86.0
+offset_right = 86.0
+offset_bottom = -46.0
+
+[node name="Panel" type="Panel" parent="paused"]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -81.0
+offset_right = 119.0
+offset_bottom = 49.0
+
+[node name="MarginContainer" type="MarginContainer" parent="paused"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = -27.0
+offset_right = 12.0
+offset_bottom = 38.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="paused/MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="paused/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_07uyl")
+theme_override_font_sizes/font_size = 10
+text = "Resume"
+
+[node name="Keep_playing" type="Button" parent="paused/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_07uyl")
+theme_override_font_sizes/font_size = 10
+text = "Restart"
+
+[node name="Quit" type="Button" parent="paused/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_07uyl")
+theme_override_font_sizes/font_size = 10
+text = "Quit?"
+
+[node name="paused" type="RichTextLabel" parent="paused"]
+layout_mode = 0
+offset_left = -104.0
+offset_top = -71.0
+offset_right = 1.0
+offset_bottom = -31.0
+theme_override_fonts/normal_font = ExtResource("2_07uyl")
+text = "Paused"
+
+[node name="GameOver" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Keep_playing" to="." method="_on_keep_playing_pressed"]
+[connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
