@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://df3260jw367v8"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_p1ung"]
-[ext_resource type="FontFile" uid="uid://cxswnjgn70m4f" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="2_up1yq"]
+[ext_resource type="FontFile" uid="uid://bhiwn16rpwe7g" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="2_up1yq"]
 
 [node name="Node2D" type="Node2D"]
 
