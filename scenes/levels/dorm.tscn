@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca83jfe0vl157"]
+[gd_scene load_steps=11 format=3 uid="uid://ca83jfe0vl157"]
 
 [ext_resource type="Texture2D" uid="uid://cd5xg3ta37385" path="res://Tiles.png" id="1_7vwbs"]
 [ext_resource type="Script" path="res://scenes/levels/area_2d.gd" id="2_bdwjp"]
 [ext_resource type="PackedScene" uid="uid://bjmpwb8xth0iu" path="res://scenes/speech_bubble.tscn" id="3_bn1eh"]
+[ext_resource type="Texture2D" uid="uid://bry4ijrc2jtgy" path="res://assets/EEStudent/EEStudent1.png" id="4_ibe76"]
+[ext_resource type="Script" path="res://scenes/levels/character_body_2d.gd" id="4_n6ufc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_246rs"]
 texture = ExtResource("1_7vwbs")
@@ -437,7 +439,14 @@ texture = ExtResource("1_7vwbs")
 [sub_resource type="TileSet" id="TileSet_kgqa0"]
 sources/0 = SubResource("TileSetAtlasSource_246rs")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54311"]
+size = Vector2(80, 6)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkspu"]
+size = Vector2(20, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sngq"]
+size = Vector2(20, 23)
 
 [node name="Dorm" type="Node2D"]
 
@@ -447,16 +456,44 @@ tile_set = SubResource("TileSet_kgqa0")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 851968, 805306388, 1, 851968, 805306388, 2, 851968, 805306388, 3, 851968, 805306388, 65536, 851968, 19, 65537, 851968, 19, 65538, 851968, 19, 65539, 851968, 19, 65540, 851968, 19, 131072, 851968, 19, 196608, 851968, 19, 131076, 851968, 19, 131075, 851968, 19, 131074, 851968, 19, 131073, 851968, 19, 196612, 851968, 19, 196611, 851968, 19, 196610, 851968, 19, 196609, 851968, 19, 4, 851968, 805306388)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap"]
+position = Vector2(40, 3)
+shape = SubResource("RectangleShape2D_54311")
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(12, -13)
+collision_layer = 2
 script = ExtResource("2_bdwjp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 21)
+[node name="area_collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_xkspu")
 
-[node name="Speech Bubble" parent="Area2D" instance=ExtResource("3_bn1eh")]
-offset_left = 5.0
-offset_top = 2.0
-offset_right = 5.0
-offset_bottom = 2.0
+[node name="SpeechBubble" parent="Area2D" instance=ExtResource("3_bn1eh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -12.0
+offset_top = -6.0
+offset_right = -12.0
+offset_bottom = -6.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 2
+script = ExtResource("4_n6ufc")
+
+[node name="EeStudent1" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(21, 5)
+texture = ExtResource("4_ibe76")
+
+[node name="player_collision" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(21, 5.5)
+shape = SubResource("RectangleShape2D_1sngq")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(13, 12)
+zoom = Vector2(5, 5)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
