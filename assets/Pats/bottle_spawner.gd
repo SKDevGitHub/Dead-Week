@@ -18,17 +18,21 @@ func _process(delta: float) -> void:
 		timer.start()
 		throw()
 func throw() -> void:
-	var bottle = load("res://assets/Pats/bottle.tscn")  # Load just before instantiating
-	if not bottle:
-		print("Error: Failed to load bottle scene!")
-		return
-	var projectile = bottle.instantiate() 
+	spawn_projectile()
+func spawn_projectile():
+	var projectile = bottle.instantiate() as Node2D  # Use Node2D for manual movement
 	add_child(projectile)
-	
-	projectile.global_position = raycast.global_position
-	if raycast.is_colliding():
-		var target_pos = raycast.get_collision_point()
-		var direction = (target_pos - projectile.global_position).normalized()
-		
-		projectile.apply_impulse(direction * 100)
-	
+
+	projectile.global_position = global_position  # Start position
+
+	var tween = get_tree().create_tween()
+
+	# Define the arc path
+	var peak_position = global_position + Vector2(75, -100)  # Peak of the arc
+	var end_position = global_position + Vector2(150, 0)  # End of the arc
+
+	# Move to peak (upward motion)
+	tween.tween_property(projectile, "global_position", peak_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	# Move to end position (downward motion)
+	tween.tween_property(projectile, "global_position", end_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
