@@ -84,9 +84,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func shoot() -> void:
-	var bullet = bullet_scene.instantiate()
-	bullet.position = position
-	if sprite.flip_h:
-		bullet.direction = 
+	pass
+	
+	
 	
 	
