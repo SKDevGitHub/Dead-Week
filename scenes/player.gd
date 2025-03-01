@@ -11,7 +11,7 @@ func _ready() -> void:
 
 var i: int = 0
 
-@export var bullet_scene: PackedScene = preload("res://scenes/ee_bullet.tscn")
+var bullet_path: PackedScene = preload("res://scenes/ee_bullet.tscn")
 
 func change_anim(anim: String) -> void:
 	if sprite.animation != anim:
@@ -21,6 +21,13 @@ func change_anim(anim: String) -> void:
 		sprite.frame = frame
 		sprite.frame_progress = frame_progress
 		i+=1
+
+func shoot() -> void:
+	var bullet = bullet_path.instantiate()
+	bullet.dir = 1
+	bullet.pos = $spawner.global_position
+	get_parent().add_child(bullet)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -83,9 +90,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func shoot() -> void:
-	pass
-	
 	
 	
 	
