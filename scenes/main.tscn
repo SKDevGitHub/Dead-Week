@@ -49,3 +49,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_srnc4")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
+
+[connection signal="pressed" from="Main_menu/MarginContainer/VBoxContainer/Play" to="Main_menu" method="_on_play_pressed"]
+[connection signal="pressed" from="Main_menu/MarginContainer/VBoxContainer/Options" to="Main_menu" method="_on_options_pressed"]
+[connection signal="pressed" from="Main_menu/MarginContainer/VBoxContainer/Quit" to="Main_menu" method="_on_quit_pressed"]

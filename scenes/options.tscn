@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://df3260jw367v8"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_p1ung"]
+[ext_resource type="FontFile" uid="uid://cxswnjgn70m4f" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="2_up1yq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Main_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_p1ung")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main_menu"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 106.0
+offset_right = 960.0
+offset_bottom = 269.0
+theme_override_fonts/normal_font = ExtResource("2_up1yq")
+theme_override_font_sizes/normal_font_size = 70
+text = "Options"
+
+[node name="MarginContainer" type="MarginContainer" parent="Main_menu"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 270.0
+offset_right = 719.0
+offset_bottom = 410.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main_menu/MarginContainer"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="Main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_up1yq")
+theme_override_font_sizes/font_size = 35
+text = "Options"
+
+[connection signal="pressed" from="Main_menu/MarginContainer/VBoxContainer/Options" to="Main_menu" method="_on_options_pressed"]
