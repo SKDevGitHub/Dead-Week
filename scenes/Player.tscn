@@ -568,6 +568,7 @@ sources/0 = SubResource("TileSetAtlasSource_ndbk1")
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(137, 25)
 script = ExtResource("1_lyex4")
+bullet_scene = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(-0.5, 0.5)
@@ -585,7 +586,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="spawner" type="Node2D" parent="player"]
-position = Vector2(11, 0)
+position = Vector2(10, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-3, 10)
