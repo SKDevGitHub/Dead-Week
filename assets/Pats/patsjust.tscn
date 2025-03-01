@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ppbaq4r3vl0"]
+
+[ext_resource type="Script" path="res://assets/Pats/track_player.gd" id="1_55nlw"]
+[ext_resource type="SpriteFrames" uid="uid://bsjjxt5aqica2" path="res://assets/Pats/pats.tres" id="2_kjnu0"]
+[ext_resource type="Script" path="res://assets/Pats/bottle_spawner.gd" id="3_smrmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u53de"]
+size = Vector2(20, 24)
+
+[node name="pats" type="CharacterBody2D"]
+script = ExtResource("1_55nlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_u53de")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = ExtResource("2_kjnu0")
+
+[node name="bottle spawner" type="Node2D" parent="."]
+position = Vector2(-11, -1)
+script = ExtResource("3_smrmk")
+
+[node name="Timer" type="Timer" parent="bottle spawner"]
+autostart = true
