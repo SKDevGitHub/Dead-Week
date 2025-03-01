@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jk3dn2dcwc13"
-path="res://.godot/imported/Tiles.png-606650b3698afd99ea52e71152f0494f.ctex"
+uid="uid://cd5xg3ta37385"
+path="res://.godot/imported/Tiles.png-825b95a5145508fffe81ba0fc1c92c0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-606650b3698afd99ea52e71152f0494f.ctex"]
+source_file="res://Tiles.png"
+dest_files=["res://.godot/imported/Tiles.png-825b95a5145508fffe81ba0fc1c92c0b.ctex"]
 
 [params]
 

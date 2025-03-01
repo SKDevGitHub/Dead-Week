@@ -13,8 +13,8 @@ script = ExtResource("1_envlk")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 27.0
+offset_bottom = 13.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
