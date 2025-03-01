@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://h75fynyx1mqx"]
+
+[ext_resource type="SpriteFrames" uid="uid://dggki1md12i5v" path="res://assets/CSStudent/CsStudent.tres" id="1_cntdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfcbf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_pfcbf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = ExtResource("1_cntdo")
+animation = &"idle"

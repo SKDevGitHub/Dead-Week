@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://csa6l7ui3jk6t"]
+[gd_scene load_steps=28 format=4 uid="uid://dk1isyqybvkna"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_lyex4"]
 [ext_resource type="Texture2D" uid="uid://bp6c2om7d8sxs" path="res://assets/EEStudent/EEStudent10.png" id="2_3jh0l"]
