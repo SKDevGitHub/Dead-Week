@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgj2al0rb0kmh"]
 
 [ext_resource type="Script" path="res://scenes/bullet.gd" id="1_d3eax"]
-[ext_resource type="Texture2D" uid="uid://dsvvykuqtfuec" path="res://assets/LightningBolt/LightningBolt1.png" id="1_pmrwg"]
-[ext_resource type="Texture2D" uid="uid://c5u2lu87kq3ly" path="res://assets/LightningBolt/LightningBolt2.png" id="2_hbj84"]
+[ext_resource type="Texture2D" uid="uid://di6ywtcwjqm5c" path="res://assets/LightningBolt/LightningBolt1.png" id="1_pmrwg"]
+[ext_resource type="Texture2D" uid="uid://dfjasa0cbilvd" path="res://assets/LightningBolt/LightningBolt2.png" id="2_hbj84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoqfi"]
 

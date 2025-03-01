@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://h75fynyx1mqx"]
+[gd_scene load_steps=5 format=3 uid="uid://h75fynyx1mqx"]
 
 [ext_resource type="SpriteFrames" uid="uid://dggki1md12i5v" path="res://assets/CSStudent/CsStudent.tres" id="1_cntdo"]
+[ext_resource type="Script" path="res://CSSTudent.gd" id="1_tl6uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfcbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhvpk"]
+size = Vector2(54, 40)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 3
+script = ExtResource("1_tl6uv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_pfcbf")
@@ -14,3 +20,18 @@ shape = SubResource("RectangleShape2D_pfcbf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = ExtResource("1_cntdo")
 animation = &"idle"
+frame_progress = 0.462093
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(3.5, -9.5)
+scale = Vector2(3.20833, 1.79167)
+sprite_frames = ExtResource("1_cntdo")
+animation = &"idle"
+autoplay = "death_anim"
+frame_progress = 0.562272
+
+[node name="death_cloud" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(3, -9)
+shape = SubResource("RectangleShape2D_bhvpk")
