@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b2ppbaq4r3vl0" path="res://assets/Pats/patsjust.tscn" id="1_0yjd6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="pats" parent="." instance=ExtResource("1_0yjd6")]

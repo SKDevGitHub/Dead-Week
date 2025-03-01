@@ -8,7 +8,9 @@ const JUMP_VELOCITY = 0
 @export var right = false
 var greater = false
 
-
+func _ready() -> void:
+	player = get_tree().current_scene.get_node("Player/player")
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
