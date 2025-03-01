@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dtqjy0q3v8mek"]
+
+[ext_resource type="Texture2D" uid="uid://b1ilfj0vwjjdr" path="res://assets/BeerBottle/BeerBottle1.png" id="1_uibge"]
+[ext_resource type="Texture2D" uid="uid://bgmu6t7ae8220" path="res://assets/BeerBottle/BeerBottle2.png" id="2_4e80y"]
+[ext_resource type="Texture2D" uid="uid://djldspthaugdm" path="res://assets/BeerBottle/BeerBottle3.png" id="3_ane5k"]
+[ext_resource type="Texture2D" uid="uid://ddfsgl0ae2dxa" path="res://assets/BeerBottle/BeerBottle4.png" id="4_mhpdk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uibge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4e80y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ane5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mhpdk")
+}],
+"loop": true,
+"name": &"threw",
+"speed": 8.0
+}]

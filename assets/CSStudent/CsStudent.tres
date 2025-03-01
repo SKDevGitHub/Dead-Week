@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dggki1md12i5v"]
+
+[ext_resource type="Texture2D" uid="uid://dt6lga2nv5d61" path="res://assets/CSStudent/CSStudent1.png" id="1_8gxcc"]
+[ext_resource type="Texture2D" uid="uid://sjn8bc03ayjv" path="res://assets/CSStudent/CSStudent2.png" id="2_ulhw1"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8gxcc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8gxcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_8gxcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ulhw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ulhw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_8gxcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_8gxcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ulhw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ulhw1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
