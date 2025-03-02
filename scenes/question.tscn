@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2elu2tdbxpeg"]
+[gd_scene load_steps=4 format=3 uid="uid://b2ceg5ukclkwu"]
 
 [ext_resource type="Script" path="res://question.gd" id="1_5jlh3"]
 [ext_resource type="PackedScene" uid="uid://bjmpwb8xth0iu" path="res://scenes/speech_bubble.tscn" id="2_gfu0c"]

@@ -1918,6 +1918,7 @@ position = Vector2(627, 2431)
 
 [node name="DoorTransition" parent="." instance=ExtResource("18_7phwr")]
 position = Vector2(743, 3410)
+next_scene = "res://scenes/Credits.tscn"
 
 [node name="CollisionShape2D" parent="DoorTransition/Trigga" index="0"]
 position = Vector2(1, -1)
