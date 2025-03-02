@@ -59,6 +59,7 @@ theme_override_fonts/normal_font = ExtResource("2_07uyl")
 text = "Paused"
 
 [node name="GameOver" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
