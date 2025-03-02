@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://canifusotex7u"]
+[gd_scene load_steps=4 format=3 uid="uid://bswl5bhw4pdvy"]
 
-[ext_resource type="FontFile" uid="uid://cxswnjgn70m4f" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="1_5xcfb"]
+[ext_resource type="FontFile" uid="uid://bhiwn16rpwe7g" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="1_5xcfb"]
 [ext_resource type="Script" path="res://scenes/control.gd" id="1_xc48d"]
-[ext_resource type="AudioStream" uid="uid://duqwjfqfheday" path="res://assets/music/2021-10-19_-_Funny_Bit_-_www.FesliyanStudios.com.mp3" id="3_5miw0"]
+[ext_resource type="AudioStream" uid="uid://dy1aimaqmif44" path="res://assets/music/2021-10-19_-_Funny_Bit_-_www.FesliyanStudios.com.mp3" id="3_5miw0"]
 
 [node name="Credits" type="Node2D"]
 
