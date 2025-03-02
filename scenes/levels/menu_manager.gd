@@ -1,7 +1,7 @@
 extends Node2D
 @onready var pause_menu = $paused
 @onready var game_over = $GameOver
-@onready var player  = $"../Player"
+@onready var player  = $"../.."
 var paused = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
