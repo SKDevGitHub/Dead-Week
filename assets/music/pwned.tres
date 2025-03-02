@@ -1,0 +1,4 @@
+[gd_resource type="AudioStreamMP3" format=3 uid="uid://dypi2odkt2cy"]
+
+[resource]
+loop = true

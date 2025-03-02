@@ -68,16 +68,17 @@ script = ExtResource("1_tl6uv")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pfcbf")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(0, -4)
-scale = Vector2(1, 1.33333)
-sprite_frames = SubResource("SpriteFrames_1ujdf")
-frame_progress = 0.211474
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = ExtResource("1_cntdo")
 animation = &"walk"
 autoplay = "idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D/AnimatedSprite2D"]
+position = Vector2(0, -4)
+scale = Vector2(1, 1.33333)
+sprite_frames = SubResource("SpriteFrames_1ujdf")
+autoplay = "default"
+frame_progress = 0.211474
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
