@@ -117,6 +117,7 @@ func _physics_process(delta: float) -> void:
 	
 func take_damage(damage):
 	health -= damage
+	sprite.play("damaged")
 	
 	if health <= 0:
 		dead = true
