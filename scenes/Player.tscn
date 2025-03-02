@@ -1,6 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://bugcjjlpnevv3"]
+[gd_scene load_steps=27 format=3 uid="uid://bugcjjlpnevv3"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_lyex4"]
+[ext_resource type="Script" path="res://scenes/h_box_container.gd" id="1_lyvc3"]
+[ext_resource type="Texture2D" uid="uid://cwdackkjnmiuw" path="res://assets/menus/heart.png" id="1_rf1hl"]
 [ext_resource type="Texture2D" uid="uid://btfagtf8i5ujy" path="res://assets/EEStudent/EEStudent10.png" id="2_3jh0l"]
 [ext_resource type="Texture2D" uid="uid://ctr5a37w41udi" path="res://assets/EEStudent/EEStudent1.png" id="2_he1xe"]
 [ext_resource type="Texture2D" uid="uid://cektpeul7xsdo" path="res://assets/EEStudent/EEStudent12.png" id="4_7u0hi"]
@@ -153,3 +155,32 @@ scale = Vector2(1e-05, 1e-05)
 
 [node name="spawner" type="Node2D" parent="player/spawnerparent"]
 position = Vector2(10, 0)
+
+[node name="UI" type="Control" parent="player"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player/UI"]
+layout_mode = 0
+offset_left = -183.0
+offset_top = -122.0
+offset_right = -106.0
+offset_bottom = -100.0
+script = ExtResource("1_lyvc3")
+
+[node name="TextureRect" type="TextureRect" parent="player/UI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rf1hl")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="player/UI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rf1hl")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="player/UI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rf1hl")
+expand_mode = 2
