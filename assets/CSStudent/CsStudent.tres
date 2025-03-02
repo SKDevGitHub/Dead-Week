@@ -1,10 +1,55 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dggki1md12i5v"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://dggki1md12i5v"]
 
+[ext_resource type="Texture2D" uid="uid://chwo3r6apwc2l" path="res://assets/StenchLines/StenchLines1.png" id="1_0kto8"]
 [ext_resource type="Texture2D" uid="uid://dt6lga2nv5d61" path="res://assets/CSStudent/CSStudent1.png" id="1_8gxcc"]
+[ext_resource type="Texture2D" uid="uid://q7otwh6r1uuy" path="res://assets/StenchLines/StenchLines2.png" id="2_ujclw"]
 [ext_resource type="Texture2D" uid="uid://sjn8bc03ayjv" path="res://assets/CSStudent/CSStudent2.png" id="2_ulhw1"]
+[ext_resource type="Texture2D" uid="uid://d1vbsqtksnvxr" path="res://assets/StenchLines/StenchLines3.png" id="3_7ub4c"]
+[ext_resource type="Texture2D" uid="uid://cg7amoiipvs8s" path="res://assets/StenchLines/StenchLines4.png" id="4_uj3vi"]
+[ext_resource type="Texture2D" uid="uid://4vwclrob3k7r" path="res://assets/StenchLines/StenchLines5.png" id="5_ru2mu"]
+[ext_resource type="Texture2D" uid="uid://b4d1ubh7ng64q" path="res://assets/StenchLines/StenchLines6.png" id="6_t4p41"]
+[ext_resource type="Texture2D" uid="uid://cb87whwo5q7ui" path="res://assets/StenchLines/StenchLines7.png" id="7_pdbva"]
+[ext_resource type="Texture2D" uid="uid://c2qpi5raqoq2o" path="res://assets/StenchLines/StenchLines8.png" id="8_8ylyy"]
+[ext_resource type="Texture2D" uid="uid://b50g8bmu2k5xc" path="res://assets/StenchLines/StenchLines9.png" id="9_j5ri1"]
+[ext_resource type="Texture2D" uid="uid://ch1sw6en6xqj2" path="res://assets/StenchLines/StenchLines10.png" id="10_4vksa"]
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0kto8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ujclw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7ub4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uj3vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ru2mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t4p41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pdbva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8ylyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j5ri1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4vksa")
+}],
+"loop": true,
+"name": &"gas_cloud",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_8gxcc")

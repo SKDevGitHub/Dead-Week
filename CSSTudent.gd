@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 
-@onready var sprite = $CollisionShape2D/AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D
 @onready var player = $"../Player/player/CollisionShape2D"
 @onready var death_cloud = $"../Area2D/death_cloud"
 @onready var cloud_sprite = $"../Area2D/AnimatedSprite2D2"
@@ -48,16 +48,18 @@ func _physics_process(delta: float) -> void:
 	if player and global_position.distance_to(player.global_position) < detection_range:
 		var direction = (player.global_position - global_position).normalized()
 		velocity.x = direction.x * SPEED  # Move only in the X direction
+		sprite.play("walk")
 	else:
 		velocity.x = 0  # Stop moving when out of range
+		sprite.play("idle")
 	
 	if player and global_position.distance_to(player.global_position) <= 30:
 		dead = true
 		die()
 	move_and_slide()
 	
-func take_damage():
-	health -=1
+func take_damage(damage):
+	health -= damage
 	if health <= 0:
 		dead = true
 		die()
@@ -67,12 +69,9 @@ func die():
 	area2d.global_position = global_position + Vector2(0, -20)
 	death_cloud.disabled = false
 	cloud_sprite.show()
-	cloud_sprite.play("die")
+	cloud_sprite.play("gas_cloud")
 	cs_sprite.hide()
 	cs_collider.disabled = true
 	
-	
-
-
 func _on_timer_timeout() -> void:
 	$"..".queue_free()

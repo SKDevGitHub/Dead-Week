@@ -21,7 +21,7 @@ shape = SubResource("RectangleShape2D_pfcbf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = ExtResource("1_cntdo")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -39,9 +39,8 @@ visible = false
 position = Vector2(0.311688, -4.46512)
 scale = Vector2(1, 1)
 sprite_frames = ExtResource("1_cntdo")
-animation = &"die"
-autoplay = "die"
-frame_progress = 0.0235754
+animation = &"gas_cloud"
+autoplay = "gas_cloud"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
