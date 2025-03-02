@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://bswl5bhw4pdvy"]
+
+[ext_resource type="FontFile" uid="uid://bhiwn16rpwe7g" path="res://fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf" id="1_5xcfb"]
+[ext_resource type="Script" path="res://scenes/control.gd" id="1_xc48d"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xc48d")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 116.0
+offset_right = 1680.0
+offset_bottom = 333.0
+theme_override_fonts/normal_font = ExtResource("1_5xcfb")
+theme_override_font_sizes/normal_font_size = 90
+text = "YOU PASSED!!!"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control"]
+offset_left = 3.0
+offset_top = 504.0
+offset_right = 1885.0
+offset_bottom = 1051.0
+theme_override_fonts/normal_font = ExtResource("1_5xcfb")
+theme_override_font_sizes/normal_font_size = 75
+text = "Game Devs:
+Steven Kautt
+Eliot Kimmel
+Ben Sullins
+Gharret Wilcut
+Music:
+Final Exam Music - BossTime: David Renda
+Dorm Level Music - RetroFunk: David Renda
+Death Music - Pwned: David Fesliyan
+Title Music - Dungeon: Kaden_Cook
+Tilesets:
+Cute Forest Tileset: aamatniekss
+Action Pack and Classic Legacy Tileset: Anokolisa                                                                                                                                                                                                               Thanks For Playing!"
+scroll_active = false
+scroll_following = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 390.0
+offset_right = 810.0
+offset_bottom = 607.0
+theme_override_fonts/normal_font = ExtResource("1_5xcfb")
+theme_override_font_sizes/normal_font_size = 90
+text = "Credits:
+"
+scroll_active = false
+
+[node name="paused" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1000.0
+offset_top = 651.0
+offset_right = 1040.0
+offset_bottom = 691.0
+scale = Vector2(4.77875, 5.24917)
+
+[node name="Panel" type="Panel" parent="paused"]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -81.0
+offset_right = 119.0
+offset_bottom = 49.0
+
+[node name="MarginContainer" type="MarginContainer" parent="paused"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -37.0
+offset_right = 58.0
+offset_bottom = 28.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="paused/MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="paused/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5xcfb")
+theme_override_font_sizes/font_size = 10
+text = "Resume"
+
+[node name="Keep_playing" type="Button" parent="paused/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5xcfb")
+theme_override_font_sizes/font_size = 10
+text = "Restart"
+
+[node name="Quit" type="Button" parent="paused/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5xcfb")
+theme_override_font_sizes/font_size = 10
+text = "Quit?"
+
+[node name="paused" type="RichTextLabel" parent="paused"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -68.0
+offset_right = 55.0
+offset_bottom = -28.0
+theme_override_fonts/normal_font = ExtResource("1_5xcfb")
+text = "Paused"
+
+[connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Resume" to="Control" method="_on_resume_pressed"]
+[connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Keep_playing" to="Control" method="_on_keep_playing_pressed"]
+[connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Quit" to="Control" method="_on_quit_pressed"]
