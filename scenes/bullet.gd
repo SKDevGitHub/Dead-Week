@@ -11,7 +11,8 @@ func _process(delta: float) -> void:
 	position += direction* delta * 500
 
 func on_body_entered(body):
-	if body.has_method("take_damage"):
+
+	if body.has_method("take_damage") and !(body.get_parent().name == "Player"):
 		body.take_damage(damage)
 		queue_free()
 
