@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2elu2tdbxpeg"]
+
+[ext_resource type="Script" path="res://question.gd" id="1_5jlh3"]
+[ext_resource type="PackedScene" uid="uid://bjmpwb8xth0iu" path="res://scenes/speech_bubble.tscn" id="2_gfu0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chruk"]
+size = Vector2(219, 21.5)
+
+[node name="question" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_5jlh3")
+
+[node name="question_collision" type="CollisionShape2D" parent="."]
+position = Vector2(109, 108)
+shape = SubResource("RectangleShape2D_chruk")
+
+[node name="SpeechBubbleQ" parent="." instance=ExtResource("2_gfu0c")]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 1
+scale = Vector2(2.07418, 1.32238)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

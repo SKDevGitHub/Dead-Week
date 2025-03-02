@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://ca83jfe0vl157"]
+[gd_scene load_steps=32 format=4 uid="uid://ca83jfe0vl157"]
 
 [ext_resource type="PackedScene" uid="uid://o13k8g86j2v7" path="res://scenes/speech.tscn" id="1_sv3vi"]
 [ext_resource type="Texture2D" uid="uid://dajptjl5hfhyo" path="res://zelda (1).jpg" id="5_at2jd"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dgv4v2un5krfd" path="res://scenes/door_transition.tscn" id="22_1do14"]
 [ext_resource type="AudioStream" uid="uid://cbvpbryekafwl" path="res://assets/music/1min-2020-06-18_-_8_Bit_Retro_Funk_-_www.FesliyanStudios.com_David_Renda.mp3" id="23_ufbji"]
 [ext_resource type="Script" path="res://scenes/levels/audio_stream_player_2d.gd" id="24_ai2tt"]
+[ext_resource type="PackedScene" uid="uid://b2elu2tdbxpeg" path="res://scenes/question.tscn" id="25_6d6as"]
 
 [sub_resource type="GDScript" id="GDScript_midxd"]
 script/source = "extends Node
@@ -825,11 +826,6 @@ sources/6 = SubResource("TileSetAtlasSource_arjwa")
 scale = Vector2(1, 0.995749)
 script = SubResource("GDScript_midxd")
 
-[node name="opening_speeech" parent="." instance=ExtResource("1_sv3vi")]
-z_index = 5
-position = Vector2(81, -85)
-message = "UHHHH! Time for MST finals! I hope I studied enough!"
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
 position = Vector2(237, -31)
@@ -904,6 +900,11 @@ tile_set = SubResource("TileSet_dc8jx")
 position = Vector2(30, -37)
 texture = ExtResource("12_gjilw")
 
+[node name="opening_speeech" parent="." instance=ExtResource("1_sv3vi")]
+z_index = 5
+position = Vector2(81, -85)
+message = "UHHHH! Time for MST finals! I hope I studied enough!"
+
 [node name="tunnel_speech" parent="." instance=ExtResource("1_sv3vi")]
 z_index = 5
 position = Vector2(434, -43)
@@ -912,11 +913,16 @@ message = "Man the other majors in the TJ tunnel look upset. Gotta be careful!"
 [node name="entering_class" parent="." instance=ExtResource("1_sv3vi")]
 visibility_layer = 16
 z_index = 5
-position = Vector2(1705, -46)
+position = Vector2(1714, -47.2006)
 message = "I'm glad I was able to get through that. Alright it's finals time!"
 
+[node name="question" parent="." instance=ExtResource("25_6d6as")]
+z_index = 5
+position = Vector2(1790, -120.512)
+message = "TESTING HERE BUDDS"
+
 [node name="Player" parent="." instance=ExtResource("5_mpiqh")]
-position = Vector2(17, -59.2519)
+position = Vector2(1927, -16.0683)
 
 [node name="cs_enemy" parent="." instance=ExtResource("19_366ul")]
 light_mask = 2

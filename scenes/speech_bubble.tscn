@@ -18,13 +18,14 @@ script = ExtResource("1_envlk")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 39.0
+offset_top = 1.0
 offset_right = 105.0
-offset_bottom = 111.0
+offset_bottom = 73.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_right = 117.0
 offset_bottom = 44.0
+scale = Vector2(0.920001, 1.16)
 label_settings = SubResource("LabelSettings_m6fep")
 autowrap_mode = 3
