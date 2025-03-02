@@ -18,22 +18,18 @@ func _on_trigga_body_exited(body: Node2D) -> void:
 	label.visible = false
 	can_enter = true
 	
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action("enter_door"):
-		change_scene(next_scene)
+func _process(delta) -> void:
+	if Input.is_action_pressed("go_through_door"):
+		if can_enter:
+			change_scene(next_scene)
 
 func change_scene(path: String):
-	await(canvas_layer.fade_out)
-	
+	await canvas_layer.fade_out()
 	ResourceLoader.load_threaded_request(path)
-
 	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 		await get_tree().process_frame
-
 	loading_scene = ResourceLoader.load_threaded_get(path)
 	if loading_scene:
 		get_tree().change_scene_to_packed(loading_scene)
-
-		await(canvas_layer.fade_in)
 	else:
 		print("Failed to load scene:", path)
