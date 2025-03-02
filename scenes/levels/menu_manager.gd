@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player.get_node("player").dead:
 		get_node("GameOver").show()
+		
 		Engine.time_scale = 0
 		
 	if Input.is_action_just_pressed("pause"):
