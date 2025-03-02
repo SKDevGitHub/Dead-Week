@@ -21,7 +21,7 @@ func throw() -> void:
 	spawn_projectile()
 func spawn_projectile():
 	var projectile = bottle.instantiate() as Node2D  # Use Node2D for manual movement
-	add_child(projectile)
+	get_parent().get_parent().add_child(projectile)
 
 	projectile.global_position = global_position  # Start position
 
