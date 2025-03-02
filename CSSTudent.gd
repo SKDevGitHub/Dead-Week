@@ -12,6 +12,7 @@ const SPEED = 50.0
 @onready var timer = $"../Timer"
 @onready var area2d = $"../Area2D"
 
+
 @export var right = false
 @export var detection_range = 200
 var greater = false
@@ -54,24 +55,26 @@ func _physics_process(delta: float) -> void:
 		sprite.play("idle")
 	
 	if player and global_position.distance_to(player.global_position) <= 30:
-		dead = true
 		die()
+		dead = true
 	move_and_slide()
 	
 func take_damage(damage):
 	health -= damage
 	if health <= 0:
-		dead = true
 		die()
+		dead = true
 		
 func die():
-	timer.start()
-	area2d.global_position = global_position + Vector2(0, -20)
-	death_cloud.disabled = false
-	cloud_sprite.show()
-	cloud_sprite.play("gas_cloud")
-	cs_sprite.hide()
-	cs_collider.disabled = true
+	if !dead:
+		area2d.show() 
+		area2d.global_position = self.global_position + Vector2(0, -10)
+		death_cloud.disabled = false
+		cloud_sprite.show()
+		cloud_sprite.play("gas_cloud")
+		cs_sprite.hide()
+		cs_collider.disabled = true
+		timer.start()
 	
 func _on_timer_timeout() -> void:
 	$"..".queue_free()

@@ -27,4 +27,4 @@ layout_mode = 0
 offset_right = 117.0
 offset_bottom = 44.0
 label_settings = SubResource("LabelSettings_m6fep")
-autowrap_mode = 2
+autowrap_mode = 3

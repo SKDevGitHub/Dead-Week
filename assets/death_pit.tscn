@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnm78cxftm8g8"]
+
+[ext_resource type="Script" path="res://scenes/levels/death_pit.gd" id="1_sxtjo"]
+[ext_resource type="Texture2D" uid="uid://b0qkag4sr2jdt" path="res://assets/menus/spikes.png" id="2_p241p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwwei"]
+size = Vector2(102, 20)
+
+[node name="death_pit" type="Node2D"]
+position = Vector2(1420, 176.751)
+script = ExtResource("1_sxtjo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 7.02988)
+shape = SubResource("RectangleShape2D_cwwei")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-19, 5.02135)
+texture = ExtResource("2_p241p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(24, 0)
+texture = ExtResource("2_p241p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D"]
+position = Vector2(24, 0)
+texture = ExtResource("2_p241p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D"]
+position = Vector2(12, 0)
+texture = ExtResource("2_p241p")

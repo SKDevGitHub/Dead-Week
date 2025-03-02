@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://h75fynyx1mqx"]
+[gd_scene load_steps=6 format=3 uid="uid://h75fynyx1mqx"]
 
 [ext_resource type="SpriteFrames" uid="uid://dggki1md12i5v" path="res://assets/CSStudent/CsStudent.tres" id="1_cntdo"]
 [ext_resource type="Script" path="res://CSSTudent.gd" id="1_tl6uv"]
+[ext_resource type="Script" path="res://death_cloud.gd" id="3_eqrgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfcbf"]
 size = Vector2(20, 22)
@@ -25,9 +26,11 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(2.38419e-07, 0)
 scale = Vector2(3.20833, 1.79167)
 collision_mask = 3
+script = ExtResource("3_eqrgi")
 
 [node name="death_cloud" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.311688, -4.46512)
@@ -37,7 +40,6 @@ shape = SubResource("RectangleShape2D_bhvpk")
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Area2D"]
 visible = false
 position = Vector2(0.311688, -4.46512)
-scale = Vector2(1, 1)
 sprite_frames = ExtResource("1_cntdo")
 animation = &"gas_cloud"
 autoplay = "gas_cloud"

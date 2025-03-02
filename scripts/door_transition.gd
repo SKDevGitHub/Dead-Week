@@ -22,14 +22,11 @@ func _process(delta) -> void:
 	if Input.is_action_pressed("go_through_door"):
 		if can_enter:
 			change_scene(next_scene)
-
 func change_scene(path: String):
-	await canvas_layer.fade_out()
-	ResourceLoader.load_threaded_request(path)
-	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		await get_tree().process_frame
-	loading_scene = ResourceLoader.load_threaded_get(path)
+	await canvas_layer.fade_out()  # Ensures fading completes first
+	loading_scene = load(path)
+	
 	if loading_scene:
-		get_tree().change_scene_to_packed(loading_scene)
+			get_tree().change_scene_to_packed(loading_scene)
 	else:
-		print("Failed to load scene:", path)
+			print("❌ Failed to load scene:", path)
