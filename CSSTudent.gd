@@ -66,7 +66,7 @@ func take_damage(damage):
 		
 func die():
 	timer.start()
-	area2d.global_position = global_position + Vector2(0, -20)
+	area2d.global_position = global_position + Vector2(0, -10)
 	death_cloud.disabled = false
 	cloud_sprite.show()
 	cloud_sprite.play("gas_cloud")
