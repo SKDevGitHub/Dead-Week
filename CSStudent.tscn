@@ -4,34 +4,47 @@
 [ext_resource type="Script" path="res://CSSTudent.gd" id="1_tl6uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfcbf"]
+size = Vector2(20, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhvpk"]
 size = Vector2(54, 40)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_mask = 3
 script = ExtResource("1_tl6uv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pfcbf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = ExtResource("1_cntdo")
 animation = &"idle"
-frame_progress = 0.462093
+autoplay = "idle"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(3.5, -9.5)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(2.38419e-07, 0)
 scale = Vector2(3.20833, 1.79167)
-sprite_frames = ExtResource("1_cntdo")
-animation = &"idle"
-autoplay = "death_anim"
-frame_progress = 0.562272
+collision_mask = 3
 
-[node name="death_cloud" type="CollisionShape2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(3, -9)
+[node name="death_cloud" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.311688, -4.46512)
+scale = Vector2(0.311688, 0.55814)
 shape = SubResource("RectangleShape2D_bhvpk")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Area2D"]
+visible = false
+position = Vector2(0.311688, -4.46512)
+scale = Vector2(1, 1)
+sprite_frames = ExtResource("1_cntdo")
+animation = &"die"
+autoplay = "die"
+frame_progress = 0.0235754
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]
