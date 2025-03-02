@@ -11,8 +11,6 @@ var max_health: int = 3
 @onready var shoot_timer := $Timer
 @onready var spawner := $spawnerparent/spawner
 @onready var spawnerparent := $spawnerparent
-@onready var damage_timer := $damage_timer
-@onready var stun_timer := $stun_timer
 
 @export var dead = false
 
@@ -47,7 +45,27 @@ func shoot() -> void:
 		
 		
 
-func _process(delta: float) -> void:
+	
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	if Input.is_action_just_pressed("shoot_button"):
+		shoot()
+	# Handle jump.
+	if Input.is_action_just_pressed("jump_button") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("left_button", "right_button")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
 	if shoot_timer.is_stopped():
 		if Input.is_action_just_pressed("shoot_button"):
 			shoot_timer.start()
@@ -94,84 +112,11 @@ func _process(delta: float) -> void:
 			if Input.is_action_pressed("left_button") and !Input.is_action_pressed("right_button"):
 				sprite.flip_h = true
 				spawnerparent.scale.x = -1
-
-
-func _physics_process(delta: float) -> void:
-	
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	if stun_timer.is_stopped():
-		
-		if Input.is_action_just_pressed("shoot_button"):
-			shoot()
-		# Handle jump.
-		if Input.is_action_just_pressed("jump_button") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction := Input.get_axis("left_button", "right_button")
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-		if shoot_timer.is_stopped():
-			if Input.is_action_just_pressed("shoot_button"):
-				shoot_timer.start()
-			if is_on_floor():
-				if Input.is_action_pressed("right_button") and !Input.is_action_pressed("left_button"):
-					sprite.flip_h = false
-					spawnerparent.scale.x = 1
-					change_anim("run")
-				if Input.is_action_pressed("left_button") and !Input.is_action_pressed("right_button"):
-					sprite.flip_h = true
-					spawnerparent.scale.x = -1
-					change_anim("run")
-				if !Input.is_action_pressed("right_button") and !Input.is_action_pressed("left_button"):
-					change_anim("default")
-				if Input.is_action_pressed("right_button") and Input.is_action_pressed("left_button"):
-					change_anim("default")
-			else:
-				change_anim("jump")
-				if Input.is_action_pressed("right_button") and !Input.is_action_pressed("left_button"):
-					sprite.flip_h = false
-					spawnerparent.scale.x = 1
-				if Input.is_action_pressed("left_button") and !Input.is_action_pressed("right_button"):
-					sprite.flip_h = true
-					spawnerparent.scale.x = -1
-		else:
-			if is_on_floor():
-				if Input.is_action_pressed("right_button") and !Input.is_action_pressed("left_button"):
-					sprite.flip_h = false
-					spawnerparent.scale.x = 1
-					sprite.animation = "run_shoot"
-				if Input.is_action_pressed("left_button") and !Input.is_action_pressed("right_button"):
-					sprite.flip_h = true
-					spawnerparent.scale.x = -1
-					sprite.animation = "run_shoot"
-				if !Input.is_action_pressed("right_button") and !Input.is_action_pressed("left_button"):
-					change_anim("default_shoot")
-				if Input.is_action_pressed("right_button") and Input.is_action_pressed("left_button"):
-					change_anim("default_shoot")
-			else:
-				change_anim("jump_shoot")
-				if Input.is_action_pressed("right_button") and !Input.is_action_pressed("left_button"):
-					sprite.flip_h = false
-					spawnerparent.scale.x = 1
-				if Input.is_action_pressed("left_button") and !Input.is_action_pressed("right_button"):
-					sprite.flip_h = true
-					spawnerparent.scale.x = -1
 	move_and_slide()
 
 	
 func take_damage(damage):
-	if damage_timer.is_stopped():
+	health -= damage
 	
-		health -= damage
-		damage_timer.start()
-		stun_timer.start()
-		sprite.play("damaged")
-		if health <= 0:
-			dead = true
-			
+	if health <= 0:
+		dead = true

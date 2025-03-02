@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://ca83jfe0vl157"]
+[gd_scene load_steps=29 format=4 uid="uid://ca83jfe0vl157"]
 
 [ext_resource type="PackedScene" uid="uid://o13k8g86j2v7" path="res://scenes/speech.tscn" id="1_sv3vi"]
 [ext_resource type="Texture2D" uid="uid://dajptjl5hfhyo" path="res://zelda (1).jpg" id="5_at2jd"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://1xfxsn6o0o87" path="res://rolla (1).jpg" id="16_7nv0n"]
 [ext_resource type="PackedScene" uid="uid://h75fynyx1mqx" path="res://CSStudent.tscn" id="19_366ul"]
 [ext_resource type="PackedScene" path="res://assets/Pats/patsjust.tscn" id="20_ptprt"]
+[ext_resource type="PackedScene" uid="uid://x44urt5ly6gw" path="res://scenes/door_transition.tscn" id="22_1do14"]
 
 [sub_resource type="GDScript" id="GDScript_midxd"]
 script/source = "extends Node
@@ -568,7 +569,6 @@ texture = ExtResource("6_qr3ah")
 12:3/0 = 0
 13:3/0 = 0
 14:3/0 = 0
-14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:3/0 = 0
 16:3/0 = 0
 0:4/0 = 0
@@ -904,7 +904,7 @@ texture = ExtResource("12_gjilw")
 [node name="tunnel_speech" parent="." instance=ExtResource("1_sv3vi")]
 z_index = 5
 position = Vector2(434, -43)
-message = "Crap, look at all the other majors in the tunnel! They look upset. I'm getting worried."
+message = "Crap, look at all the other majors in the TJ tunnel! They look upset. I'm getting worried."
 
 [node name="entering_class" parent="." instance=ExtResource("1_sv3vi")]
 visibility_layer = 16
@@ -913,10 +913,40 @@ position = Vector2(1705, -46)
 message = "I'm glad I was able to get through that. Alright it's finals time!"
 
 [node name="Player" parent="." instance=ExtResource("5_mpiqh")]
-position = Vector2(14, -60)
+position = Vector2(1356, 38.1622)
 
 [node name="cs_enemy" parent="." instance=ExtResource("19_366ul")]
-position = Vector2(338, -11.047)
+light_mask = 2
+position = Vector2(794, 85.3629)
+
+[node name="cs_enemy2" parent="." instance=ExtResource("19_366ul")]
+position = Vector2(766, 84.3586)
+
+[node name="cs_enemy3" parent="." instance=ExtResource("19_366ul")]
+position = Vector2(733, 85.3629)
+
+[node name="cs_enemy4" parent="." instance=ExtResource("19_366ul")]
+position = Vector2(1067, 83.3543)
 
 [node name="pats" parent="." instance=ExtResource("20_ptprt")]
-position = Vector2(487, -9.03842)
+position = Vector2(880, 84.3586)
+collision_mask = 2
+
+[node name="pats2" parent="." instance=ExtResource("20_ptprt")]
+position = Vector2(950, 85.3629)
+collision_mask = 2
+
+[node name="pats3" parent="." instance=ExtResource("20_ptprt")]
+position = Vector2(1183, 87.3714)
+collision_mask = 2
+
+[node name="pats4" parent="." instance=ExtResource("20_ptprt")]
+position = Vector2(1214, 87.3714)
+collision_mask = 2
+
+[node name="pats5" parent="." instance=ExtResource("20_ptprt")]
+position = Vector2(1242, 86.3671)
+collision_mask = 2
+
+[node name="DoorTransition" parent="." instance=ExtResource("22_1do14")]
+position = Vector2(1997, -31.1323)
