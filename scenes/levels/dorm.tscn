@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://o13k8g86j2v7" path="res://scenes/speech.tscn" id="1_sv3vi"]
 [ext_resource type="Texture2D" uid="uid://dajptjl5hfhyo" path="res://zelda (1).jpg" id="5_at2jd"]
 [ext_resource type="Texture2D" uid="uid://ctdattatn8jxp" path="res://VerzatileDev_SideScroller_Background.png" id="5_misy1"]
-[ext_resource type="PackedScene" uid="uid://leubg5h2abun" path="res://scenes/Player.tscn" id="5_mpiqh"]
+[ext_resource type="PackedScene" uid="uid://bugcjjlpnevv3" path="res://scenes/Player.tscn" id="5_mpiqh"]
 [ext_resource type="Texture2D" uid="uid://jk3dn2dcwc13" path="res://assets/Tiles.png" id="5_qc1kv"]
 [ext_resource type="Texture2D" uid="uid://bd2l0yjol1xff" path="res://goon.png" id="6_18x4y"]
 [ext_resource type="Texture2D" uid="uid://buwj7umxlred3" path="res://turt.png" id="6_52h60"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://1xfxsn6o0o87" path="res://rolla (1).jpg" id="16_7nv0n"]
 [ext_resource type="PackedScene" uid="uid://h75fynyx1mqx" path="res://CSStudent.tscn" id="19_366ul"]
 [ext_resource type="PackedScene" path="res://assets/Pats/patsjust.tscn" id="20_ptprt"]
-[ext_resource type="PackedScene" uid="uid://x44urt5ly6gw" path="res://scenes/door_transition.tscn" id="22_1do14"]
+[ext_resource type="PackedScene" uid="uid://dgv4v2un5krfd" path="res://scenes/door_transition.tscn" id="22_1do14"]
 
 [sub_resource type="GDScript" id="GDScript_midxd"]
 script/source = "extends Node
