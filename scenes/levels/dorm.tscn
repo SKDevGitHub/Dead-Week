@@ -739,7 +739,7 @@ sources/2 = SubResource("TileSetAtlasSource_sqnxx")
 [node name="opening_speeech" parent="." instance=ExtResource("1_sv3vi")]
 z_index = 5
 position = Vector2(81, -85)
-message = "UHHHH! Time for MST finals!"
+message = "UHHHH! Time for MST finals! I hope I studied enough!"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -818,13 +818,13 @@ texture = ExtResource("12_gjilw")
 [node name="tunnel_speech" parent="." instance=ExtResource("1_sv3vi")]
 z_index = 5
 position = Vector2(434, -43)
-message = "Crap, look at all the other majors in the tunnel!"
+message = "Crap, look at all the other majors in the tunnel! They look upset. Were there finals that hard?"
 
 [node name="entering_class" parent="." instance=ExtResource("1_sv3vi")]
 visibility_layer = 16
 z_index = 5
 position = Vector2(1705, -46)
-message = "Man that was rough, finally its time to take my finals!"
+message = "Man that was rough, finally its time to take my finals! Here we go!"
 
 [node name="Player" parent="." instance=ExtResource("5_mpiqh")]
 position = Vector2(14, -60)
