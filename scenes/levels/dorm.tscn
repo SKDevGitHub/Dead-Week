@@ -735,6 +735,7 @@ sources/1 = SubResource("TileSetAtlasSource_j5sa6")
 sources/2 = SubResource("TileSetAtlasSource_sqnxx")
 
 [node name="Dorm" type="Node2D"]
+scale = Vector2(1, 0.995749)
 
 [node name="opening_speeech" parent="." instance=ExtResource("1_sv3vi")]
 z_index = 5
