@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 50.0
 
 @onready var sprite = $AnimatedSprite2D
-@onready var player = $"../Player/player/CollisionShape2D"
+@onready var player = $"../Player/player"
 @onready var death_cloud = $"../Area2D/death_cloud"
 @onready var cloud_sprite = $"../Area2D/AnimatedSprite2D2"
 @onready var cs_sprite = $AnimatedSprite2D
