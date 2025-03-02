@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_body_entered(body):
-	if body.has_method("take_damage") and !(body.name == "pats"):
-		print(body.get_parent().name)
+	print(body.get_parent().name)
+	if body.has_method("take_damage") and !(body.get_parent().name == "Pats"):
 		body.take_damage(damage)
 		bottle.queue_free()
