@@ -913,7 +913,7 @@ position = Vector2(1705, -46)
 message = "I'm glad I was able to get through that. Alright it's finals time!"
 
 [node name="Player" parent="." instance=ExtResource("5_mpiqh")]
-position = Vector2(1356, 38.1622)
+position = Vector2(512, -13.0555)
 
 [node name="cs_enemy" parent="." instance=ExtResource("19_366ul")]
 light_mask = 2
@@ -928,25 +928,27 @@ position = Vector2(733, 85.3629)
 [node name="cs_enemy4" parent="." instance=ExtResource("19_366ul")]
 position = Vector2(1067, 83.3543)
 
-[node name="pats" parent="." instance=ExtResource("20_ptprt")]
+[node name="DoorTransition" parent="." instance=ExtResource("22_1do14")]
+position = Vector2(1997, -31.1323)
+
+[node name="Pats" type="Node2D" parent="."]
+
+[node name="pats" parent="Pats" instance=ExtResource("20_ptprt")]
 position = Vector2(880, 84.3586)
 collision_mask = 2
 
-[node name="pats2" parent="." instance=ExtResource("20_ptprt")]
-position = Vector2(950, 85.3629)
+[node name="pats2" parent="Pats" instance=ExtResource("20_ptprt")]
+position = Vector2(992, 54.2305)
 collision_mask = 2
 
-[node name="pats3" parent="." instance=ExtResource("20_ptprt")]
-position = Vector2(1183, 87.3714)
+[node name="pats3" parent="Pats" instance=ExtResource("20_ptprt")]
+position = Vector2(1142, 37.158)
 collision_mask = 2
 
-[node name="pats4" parent="." instance=ExtResource("20_ptprt")]
-position = Vector2(1214, 87.3714)
+[node name="pats4" parent="Pats" instance=ExtResource("20_ptprt")]
+position = Vector2(1377, 38.1622)
 collision_mask = 2
 
-[node name="pats5" parent="." instance=ExtResource("20_ptprt")]
+[node name="pats5" parent="Pats" instance=ExtResource("20_ptprt")]
 position = Vector2(1242, 86.3671)
 collision_mask = 2
-
-[node name="DoorTransition" parent="." instance=ExtResource("22_1do14")]
-position = Vector2(1997, -31.1323)
