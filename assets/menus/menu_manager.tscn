@@ -10,10 +10,9 @@ script = ExtResource("1_lv16a")
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 46.0
-offset_top = -86.0
-offset_right = 86.0
-offset_bottom = -46.0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="paused"]
 layout_mode = 0
@@ -66,6 +65,44 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Panel" type="Panel" parent="GameOver"]
+offset_left = -115.0
+offset_top = -81.0
+offset_right = 119.0
+offset_bottom = 49.0
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOver"]
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 112.0
+offset_bottom = 38.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayAgain" type="Button" parent="GameOver/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_07uyl")
+theme_override_font_sizes/font_size = 10
+text = "Play Again?"
+
+[node name="Quit" type="Button" parent="GameOver/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_07uyl")
+theme_override_font_sizes/font_size = 10
+text = "Quit?"
+
+[node name="Game_over" type="RichTextLabel" parent="GameOver"]
+offset_left = -68.0
+offset_top = -51.0
+offset_right = 123.0
+offset_bottom = -11.0
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_07uyl")
+text = "GAME OVER"
+
 [connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Keep_playing" to="." method="_on_keep_playing_pressed"]
 [connection signal="pressed" from="paused/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="GameOver/MarginContainer/VBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="GameOver/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -5,17 +5,18 @@ var shooting = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
 
-var max_health: int = 5
 
+var max_health: int = 3
 @onready var sprite := $AnimatedSprite2D
 @onready var shoot_timer := $Timer
 @onready var spawner := $spawnerparent/spawner
 @onready var spawnerparent := $spawnerparent
 
+@export var dead = false
+
 func _ready() -> void:
 	change_anim("default")
 	health = max_health
-
 var i: int = 0
 
 var bullet_path: PackedScene = preload("res://scenes/ee_bullet.tscn")
@@ -51,12 +52,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-
 	if Input.is_action_just_pressed("shoot_button"):
 		shoot()
-
-	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump_button") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -119,11 +116,8 @@ func _physics_process(delta: float) -> void:
 
 	
 func take_damage(damage):
-	health - damage
+	health -= damage
+	
 	if health <= 0:
-		game_over()
+		dead = true
 		
-func game_over():
-	Engine.time_scale = 0
-	
-	
