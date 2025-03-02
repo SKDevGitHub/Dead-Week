@@ -26,6 +26,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(2.38419e-07, 0)
 scale = Vector2(3.20833, 1.79167)
 collision_mask = 3
