@@ -1,13 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnm78cxftm8g8"]
+[gd_scene load_steps=4 format=3 uid="uid://d0532hxh7rtxc"]
 
 [ext_resource type="Script" path="res://scenes/levels/death_pit.gd" id="1_sxtjo"]
-[ext_resource type="Texture2D" uid="uid://b0qkag4sr2jdt" path="res://assets/menus/spikes.png" id="2_p241p"]
+[ext_resource type="Texture2D" uid="uid://c6vjlyjruv41c" path="res://assets/menus/spikes.png" id="2_p241p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwwei"]
 size = Vector2(102, 20)
 
 [node name="death_pit" type="Node2D"]
-position = Vector2(1420, 176.751)
 script = ExtResource("1_sxtjo")
 
 [node name="Area2D" type="Area2D" parent="."]
