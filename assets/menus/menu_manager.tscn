@@ -66,12 +66,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="GameOver"]
+layout_mode = 0
 offset_left = -115.0
 offset_top = -81.0
 offset_right = 119.0
 offset_bottom = 49.0
 
 [node name="MarginContainer" type="MarginContainer" parent="GameOver"]
+layout_mode = 0
 offset_left = -6.0
 offset_top = -4.0
 offset_right = 112.0
@@ -93,6 +95,7 @@ theme_override_font_sizes/font_size = 10
 text = "Quit?"
 
 [node name="Game_over" type="RichTextLabel" parent="GameOver"]
+layout_mode = 0
 offset_left = -68.0
 offset_top = -51.0
 offset_right = 123.0

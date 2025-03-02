@@ -37,7 +37,6 @@ shape = SubResource("RectangleShape2D_bhvpk")
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Area2D"]
 visible = false
 position = Vector2(0.311688, -4.46512)
-scale = Vector2(1, 1)
 sprite_frames = ExtResource("1_cntdo")
 animation = &"gas_cloud"
 autoplay = "gas_cloud"
