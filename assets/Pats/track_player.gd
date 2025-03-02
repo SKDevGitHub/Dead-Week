@@ -7,9 +7,12 @@ const SPEED = 0
 const JUMP_VELOCITY = 0
 @export var right = false
 var greater = false
+var health
+var max_health = 5
 
 func _ready() -> void:
 	player = get_tree().current_scene.get_node("Player/player")
+	health = max_health
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,3 +35,11 @@ func _physics_process(delta: float) -> void:
 			greater = false
 
 	move_and_slide()
+	
+func take_damage(damage):
+	health -= damage
+	if health <= 0:
+		die()
+
+func die():
+	queue_free()

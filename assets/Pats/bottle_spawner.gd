@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var bottle: PackedScene = preload("res://assets/Pats/bottle.tscn")  # Load scene properly
-@onready var raycast = $RayCast2D
 @onready var sprite = $"../CollisionShape2D/AnimatedSprite2D"
 @onready var timer: Timer = $Timer
 @onready var pats = $".."
@@ -41,6 +40,7 @@ func spawn_projectile():
 		tween.tween_property(projectile, "global_position", end_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	tween.finished.connect(func(): 
 		print("Tween finished, deleting object.")
-		projectile.queue_free())
+		if projectile:
+			projectile.queue_free())
 		
 	

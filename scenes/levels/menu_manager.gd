@@ -1,5 +1,6 @@
 extends Node2D
-@onready var pause_menu = $Pause
+@onready var pause_menu = $paused
+@onready var game_over = $GameOver
 
 var paused = false
 # Called when the node enters the scene tree for the first time.
